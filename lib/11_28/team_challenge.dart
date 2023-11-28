@@ -19,7 +19,7 @@ void main() {
       output += 'clap';
       clapCount++;
       clapCountsByPlayer[currentPlayerIndex]++;
-      // 가장 많은 clap을 한 플레이어 업데이트
+      // 가장 많은 clap을 한 플레이어
       if (clapCountsByPlayer[currentPlayerIndex] > mostClaps) {
         mostClaps = clapCountsByPlayer[currentPlayerIndex];
         mostClapsPlayer = players[currentPlayerIndex];
@@ -36,7 +36,7 @@ void main() {
     String player = players[(i - 1) % players.length];
     print('$player: $output');
 
-    // 플레이어 인덱스 업데이트
+    // 플레이어 인덱스
     currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
   }
 
