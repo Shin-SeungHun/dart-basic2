@@ -40,10 +40,10 @@ void main() {
     currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
   }
 
-  print('');
-  print('clap의 총 개수: $clapCount');
+
+  print('\nclap의 총 개수: $clapCount');
   print('rool의 총 개수: $roolCount');
-  print('ahh의 총 개수: $ahhCount');
+  print('ahh의 총 개수: $ahhCount\n');
 
   // 각 플레이어의 clap 횟수 출력
   for (int i = 0; i < players.length; i++) {
@@ -51,5 +51,5 @@ void main() {
   }
 
   // 가장 많은 clap을 한 플레이어 출력
-  print('가장 많은 clap을 한 플레이어: $mostClapsPlayer (${mostClaps}회)');
+  print('\n가장 많은 clap한 플레이어: $mostClapsPlayer');
 }
