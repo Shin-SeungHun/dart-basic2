@@ -21,7 +21,7 @@ class Cleric {
       mp -= 5;
       hp = maxHp;
       print('$name는 mp를 5만큼 사용해 hp를 최대로 회복했다.');
-      print('현재 mp : $mp');
+      print('현재 mp : $mp\n');
     } else {
       print('$name는 mp의 부족으로 hp 회복에 실패했다.');
     }
@@ -32,7 +32,7 @@ class Cleric {
   ///   3초 기도하면 회복량은 3~5포인트 최대 mp보다 더 회복하는 것은 불가능
   ///   pray(int time) 인수에 기도할 시간을 지정할 수 있다. 리턴값은 실제로 회복된 mp 양을 반환한다
   int pray(int time) {
-    print('');
+
     int maxRecovery = maxMp - mp; // 현재 mp에서 회복 가능한 양
 
     // 랜덤 mp 회복량 0~2포인트, addMp < 3
