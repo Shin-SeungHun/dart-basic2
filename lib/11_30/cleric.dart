@@ -8,5 +8,13 @@ class Cleric {
 
   Cleric(this.name, this.hp, this.mp);
 
-
+  selfAid() {
+    if (mp >= 5) {
+      mp -= 5;
+      hp = maxHp;
+      print('$name는 hp를 최대로 회복했다.');
+    } else {
+      print('$name은 hp 회복에 실패했다.');
+    }
+  }
 }
