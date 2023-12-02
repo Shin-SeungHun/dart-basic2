@@ -24,16 +24,15 @@ class Cleric {
   ///   성직자는 셀프 에이드라는 마법을 사용할 수 있고 mp를 5소비하면 자신의 hp를 최대hp까지 회복할 수 있다.
   ///   selfAid() 인수 x, 리턴 x
   void selfAid() {
+    print('$name는 셀프 에이드를 사용했다.');
     if (mp >= 5) {
       mp -= 5;
       hp = maxHp;
       print('$name는 mp를 5만큼 사용해 hp를 최대로 회복했다.\n');
-
-      print('$name의 상태');
-      print('hp : $hp, mp : $mp\n');
     } else {
-      print('$name는 mp의 부족으로 hp 회복에 실패했다.');
+      print('$name는 mp의 부족으로 셀프 에이드 사용에 실패했다.\n');
     }
+    statusMessage();
   }
 
   ///   성직자는 기도하기라는 행동을 취할 수 있고 자신의 mp를 회복한다
@@ -47,34 +46,29 @@ class Cleric {
     // 랜덤 mp 회복량 0~2포인트, addMp < 3
     int addMp = Random().nextInt(3);
 
+    print('$name는 기도하기를 사용했다.');
+
     if (time == 0) {
       sumMp = 0;
       addMp = 0;
 
-      // 총 회복량
-      // 기도 시간과 mp 회복량의 합과 현재 mp의 최대 회복 가능한 양 중 작은 값을 선택
-      sumMp = min(time + addMp, mpRecovery);
-
-      // mp를 업데이트
-      mp = mp + sumMp;
-
       print('$name의 기도가 실패했다.');
-      print(
-          '$name - 기도시간 : $time, mp 회복량 : $addMp, 총 mp 회복량 : $sumMp, 현재 mp : $mp\n');
-
-      return sumMp;
     } else {
       // 총 회복량
       // 기도 시간과 mp 회복량의 합과 현재 mp의 최대 회복 가능한 양 중 작은 값을 선택
       sumMp = min(time + addMp, mpRecovery);
 
       // mp를 업데이트
-      mp = mp + sumMp;
+      mp += sumMp;
     }
 
-    print(
-        '$name - 기도시간 : $time, mp 회복량 : $addMp, 총 mp 회복량 : $sumMp, 현재 mp : $mp\n');
-
+    print('$name - 기도시간 : $time, mp 회복량 : $addMp, 총 mp 회복량 : $sumMp\n');
+    statusMessage();
     return sumMp; // 총 회복량 반환
+  }
+
+  void statusMessage() {
+    print('상태 메시지');
+    print('이름 : $name, hp : $hp, mp : $mp\n');
   }
 }
