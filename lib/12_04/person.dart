@@ -1,9 +1,12 @@
 class Person {
   String _name; // 이름
+  int _age;
 
   Person({
     required String name,
-  }) : _name = name;
+    required int age,
+  })  : _name = name,
+        _age = age;
 
   String get name => _name;
 
@@ -11,8 +14,14 @@ class Person {
     _name = value;
   }
 
+  int get age => _age;
+
+  set age(int value) {
+    _age = value;
+  }
+
   @override
   String toString() {
-    return 'Person{_name: $_name}';
+    return 'Person{_name: $_name, _age: $_age}';
   }
 }

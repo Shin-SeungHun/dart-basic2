@@ -32,8 +32,8 @@ void main() {
 
   final List<Person> personList = [];
 
-  final Person hong = Person(name: '홍길동');
-  final Person han = Person(name: '한석봉');
+  final Person hong = Person(name: '홍길동', age: 20);
+  final Person han = Person(name: '한석봉', age: 25);
 
   personList.add(hong);
   personList.add(han);
@@ -42,4 +42,14 @@ void main() {
   for (Person ps in personList) {
     print(ps.name);
   }
+
+  Map<String, int> personMap = {};
+  for (Person ps in personList) {
+    personMap[ps.name] = ps.age;
+  }
+
+  // Map에 저장한 값을 출력
+  personMap.forEach((String name, int age) {
+    print('$name의 나이는 $age살');
+  });
 }
