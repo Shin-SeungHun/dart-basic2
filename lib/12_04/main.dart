@@ -1,6 +1,8 @@
 import 'package:basic/12_04/wand.dart';
 import 'package:basic/12_04/wizard.dart';
 
+import 'person.dart';
+
 // 연습문제 2-1
 // 1. 대한민국의 도시 이름 모음 (순서 상관 없음)
 //     - list
@@ -14,7 +16,7 @@ void main() {
   // wand.name = 'dd'; error
   // wand.power = 0.3; error
 
-  final Wizard wizard = Wizard(name: '해리포터', hp: -10, mp: 1, wand: wand);
+  final Wizard wizard = Wizard(name: '해리포터', hp: 10, mp: 1, wand: wand);
 
   print(wizard.toString());
 
@@ -27,4 +29,17 @@ void main() {
   wizard.wand = newWand;
 
   print(wizard.toString());
+
+  final List<Person> personList = [];
+
+  final Person hong = Person(name: '홍길동');
+  final Person han = Person(name: '한석봉');
+
+  personList.add(hong);
+  personList.add(han);
+
+  /// list에 담긴 모든 person 인스턴스의 이름을 표시
+  for (Person ps in personList) {
+    print(ps.name);
+  }
 }
