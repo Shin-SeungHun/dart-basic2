@@ -1,3 +1,3 @@
-abstract class TangibleAsset{
+import 'asset.dart';
 
-}
+abstract class TangibleAsset extends Asset {}
