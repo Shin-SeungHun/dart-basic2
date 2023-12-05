@@ -10,4 +10,9 @@ abstract interface class Thing {
   set weight(double value) {
     _weight = value;
   }
+
+  @override
+  String toString() {
+    return 'Thing{_weight: $_weight}';
+  }
 }
