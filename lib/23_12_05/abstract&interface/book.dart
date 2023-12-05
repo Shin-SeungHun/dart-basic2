@@ -17,12 +17,12 @@ class Book extends TangibleAsset {
     required this.color,
     required this.isbn,
     required this.weight,
-    required super.assetList,
-  });
+  }) : super(weight: 0.0, assetList: []);
 
   @override
   void tangibleAssetAdd() {
     super.tangibleAssetList.add(this);
+    super.assetList.add(this);
   }
 
   @override

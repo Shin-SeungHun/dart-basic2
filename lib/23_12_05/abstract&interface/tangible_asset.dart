@@ -10,11 +10,15 @@ import 'thing.dart';
 abstract class TangibleAsset extends Asset implements Thing {
   List<TangibleAsset> tangibleAssetList = [];
 
-  TangibleAsset({required super.assetList});
+  @override
+  double weight;
+
+  TangibleAsset({required super.assetList, required this.weight});
 
   void tangibleAssetAdd() {
     print('유형 자산 추가');
     tangibleAssetList.add(this);
+    assetAdd();
   }
 
   void tangibleAsset() {

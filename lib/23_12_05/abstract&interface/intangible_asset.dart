@@ -11,6 +11,7 @@ abstract class IntangibleAsset extends Asset {
   void intangibleAssetAdd() {
     print('무형 자산 추가');
     intangibleAssetList.add(this);
+    assetAdd();
   }
 
   void intangibleAsset() {
