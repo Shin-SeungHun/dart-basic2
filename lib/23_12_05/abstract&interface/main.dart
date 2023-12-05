@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:basic/23_12_05/abstract&interface/tangible_asset.dart';
 
 import 'book.dart';
@@ -17,8 +19,8 @@ void main() {
   // print(codingBook1.toString());
   // print(codingBook2.toString());
 
-  final Patent patent1 = Patent(name: '특허1', price: 1000000);
-  final Patent patent2 = Patent(name: '특허2', price: 2000000);
+  final Patent patent1 = Patent(name: '특허1', price: 1000000, patentNum: 1234);
+  final Patent patent2 = Patent(name: '특허2', price: 2000000, patentNum: 5678);
 
   // print(patent1.toString());
   // print(patent2.toString());
@@ -43,7 +45,7 @@ void main() {
   patent2.intangibleAssetAdd();
   patent2.intangibleAsset();
 
-  // 자산 목록 출력
+  // 자산 목록 출가
   galaxyBook.asset();
   gram.asset();
 

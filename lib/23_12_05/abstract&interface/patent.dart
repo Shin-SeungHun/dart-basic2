@@ -5,10 +5,12 @@ import 'intangible_asset.dart';
 class Patent extends IntangibleAsset {
   String name;
   int price;
+  int patentNum;
 
   Patent({
     required this.name,
     required this.price,
+    required this.patentNum,
   }) : super(assetList: []);
 
   @override
@@ -26,6 +28,6 @@ class Patent extends IntangibleAsset {
 
   @override
   String toString() {
-    return 'Patent{name: $name, price: $price}';
+    return 'Patent{name: $name, price: $price, patentNum: $patentNum}';
   }
 }
