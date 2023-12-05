@@ -17,10 +17,23 @@ class Book extends TangibleAsset {
     required this.color,
     required this.isbn,
     required this.weight,
+    required super.assetList,
   });
 
   @override
+  void tangibleAssetAdd() {
+    super.tangibleAssetList.add(this);
+  }
+
+  @override
+  void tangibleAsset() {
+    for (TangibleAsset tangibleAsset in super.tangibleAssetList) {
+      print(tangibleAsset);
+    }
+  }
+
+  @override
   String toString() {
-    return 'Book{name: $name, price: $price, color: $color, isbn: $isbn, weight: $weight}';
+    return 'Book{name: $name, price: $price, color: $color, isbn: $isbn, weight: ${weight}kg}';
   }
 }

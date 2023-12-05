@@ -17,10 +17,23 @@ class Computer extends TangibleAsset {
     required this.color,
     required this.makerName,
     required this.weight,
+    required super.assetList,
   });
 
   @override
+  void tangibleAssetAdd() {
+    super.tangibleAssetList.add(this);
+  }
+
+  @override
+  void tangibleAsset() {
+    for (TangibleAsset tangibleAsset in super.tangibleAssetList) {
+      print(tangibleAsset);
+    }
+  }
+
+  @override
   String toString() {
-    return 'Computer{name: $name, price: $price, color: $color, makerName: $makerName, weight: $weight}';
+    return 'Computer{name: $name, price: $price, color: $color, makerName: $makerName, weight: ${weight}kg}';
   }
 }
