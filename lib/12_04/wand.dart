@@ -14,7 +14,7 @@ class Wand {
     }
 
     // 마력은 0.5이상 100.0 이하이다.
-    if (power >= 0.5 && power < 100.0) {
+    if (0.5 <= power && power <= 100.0) {
       _power = power;
     } else {
       throw Exception('$name의 마력은 0.5이상 100.0 이하이다.');
@@ -36,7 +36,7 @@ class Wand {
 
   /// 마력은 0.5이상 100.0 이하이다.
   set power(double value) {
-    if (value >= 0.5 && value < 100.0) {
+    if (0.5 <= value && value <= 100.0) {
       _power = value;
     } else {
       throw Exception('$name의 마력은 0.5이상 100.0이하이다.');

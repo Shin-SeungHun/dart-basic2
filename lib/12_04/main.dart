@@ -12,9 +12,10 @@ import 'person.dart';
 //     - map
 
 void main() {
-  final Wand wand = Wand(name: '딱총나무 지팡이', power: 10);
+  final Wand wand = Wand(name: '딱총나무 지팡이', power: 100);
   // wand.name = 'dd'; error
   // wand.power = 0.3; error
+  // wand.power = 101; error
 
   final Wizard wizard = Wizard(name: '해리포터', hp: 10, mp: 1, wand: wand);
 
@@ -43,7 +44,7 @@ void main() {
     print(ps.name);
   }
 
-  Map<String, int> personMap = {};
+  final Map<String, int> personMap = {};
   for (Person ps in personList) {
     personMap[ps.name] = ps.age;
   }
