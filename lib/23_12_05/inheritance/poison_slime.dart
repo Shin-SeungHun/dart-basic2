@@ -1,6 +1,7 @@
 import 'hero.dart';
 import 'slime.dart';
 
+
 class PoisonSlime extends Slime {
   PoisonSlime(super.suffix);
 
