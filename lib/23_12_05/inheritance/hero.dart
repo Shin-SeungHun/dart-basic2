@@ -14,12 +14,12 @@ class Hero {
   String name;
   int _hp;
   Sword sword;
+
   Hero({
     required this.name,
     required this.sword,
     required int hp,
   }) : _hp = hp;
-
 
   // getter
   // 프로퍼티
