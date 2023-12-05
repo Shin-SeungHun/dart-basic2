@@ -1,5 +1,5 @@
-import 'package:basic/12_04/wand.dart';
-import 'package:basic/12_04/wizard.dart';
+import 'package:basic/23_12_04/wand.dart';
+import 'package:basic/23_12_04/wizard.dart';
 
 import 'person.dart';
 
