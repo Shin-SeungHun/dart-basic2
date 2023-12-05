@@ -9,7 +9,6 @@ class Book extends TangibleAsset {
   @override
   double weight;
 
-
   Book({
     required this.name,
     required this.price,
@@ -18,11 +17,8 @@ class Book extends TangibleAsset {
     required this.weight,
   });
 
-
   @override
   String toString() {
     return 'Book{name: $name, price: $price, color: $color, isbn: $isbn}';
   }
-
-
 }
