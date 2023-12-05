@@ -1,22 +1,22 @@
 import 'hero.dart';
 import 'poison_slime.dart';
-
+import 'sword.dart';
 
 void main() {
-  Hero.moneyRandom();
+  // Hero.moneyRandom();
   // print(Hero.money);
 
-  final hero = Hero(name: '용사', hp: 100);
-  hero.name = 'aa';
+  final sword = Sword(name: '참철검', damage: 10);
+
+  final hero = Hero(name: '용사', hp: 100, sword: sword);
+  // print(hero.name);
   // print(hero.hp);
+  // print(hero.sword);
 
-  // final Slime slime = Slime('suffix');
+  // final Slime slime = Slime('대형');
 
-  final PoisonSlime poisonSlime = PoisonSlime('suffix');
+  final PoisonSlime poisonSlime = PoisonSlime('포이즌');
   poisonSlime.attack(hero);
-  // print('${hero.name}는 ${poisonSlime.posionDamage}의 피해를 입었다!');
 
   // print(poisonSlime.poisonAttackCnt);
-
-
 }

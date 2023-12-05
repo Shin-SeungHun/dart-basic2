@@ -7,19 +7,19 @@ class Hero {
   // 공통의 돈
   static int money = 100;
 
-  static void moneyRandom() {
-    Hero.money = Random().nextInt(1000);
-  }
+  // static void moneyRandom() {
+  //   Hero.money = Random().nextInt(1000);
+  // }
 
   String name;
   int _hp;
-  Sword? sword;
-
+  Sword sword;
   Hero({
     required this.name,
+    required this.sword,
     required int hp,
-    this.sword,
   }) : _hp = hp;
+
 
   // getter
   // 프로퍼티
@@ -51,6 +51,11 @@ class Hero {
   }
 
   void run() {
-    print('뛰었다');
+    print('$name가 뛰었다');
+  }
+
+  @override
+  String toString() {
+    return 'Hero{name: $name, _hp: $_hp, sword: $sword}';
   }
 }
