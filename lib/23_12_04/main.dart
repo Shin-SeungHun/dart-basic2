@@ -1,7 +1,6 @@
-import 'package:basic/23_12_04/wand.dart';
-import 'package:basic/23_12_04/wizard.dart';
-
 import 'person.dart';
+import 'wand.dart';
+import 'wizard.dart';
 
 // 연습문제 2-1
 // 1. 대한민국의 도시 이름 모음 (순서 상관 없음)
