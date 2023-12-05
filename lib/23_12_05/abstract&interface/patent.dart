@@ -9,7 +9,20 @@ class Patent extends IntangibleAsset {
   Patent({
     required this.name,
     required this.price,
+    required super.assetList,
   });
+
+  @override
+  void intangibleAssetAdd() {
+    super.intangibleAssetList.add(this);
+  }
+
+  @override
+  void intangibleAsset() {
+    for (IntangibleAsset intangibleAsset in super.intangibleAssetList) {
+      print(intangibleAsset);
+    }
+  }
 
   @override
   String toString() {
