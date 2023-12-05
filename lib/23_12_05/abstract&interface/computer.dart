@@ -1,4 +1,6 @@
-class Computer{
+import 'tangible_asset.dart';
+
+class Computer extends TangibleAsset {
   String name;
   int price;
   String color;
