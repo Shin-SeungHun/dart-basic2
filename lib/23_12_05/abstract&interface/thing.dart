@@ -5,8 +5,4 @@ abstract interface class Thing {
 
   set weight(double weight);
 
-  @override
-  String toString() {
-    return 'Thing{}';
-  }
 }
