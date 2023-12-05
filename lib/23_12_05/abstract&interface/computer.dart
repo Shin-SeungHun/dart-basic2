@@ -19,6 +19,6 @@ class Computer extends TangibleAsset {
 
   @override
   String toString() {
-    return 'Computer{name: $name, price: $price, color: $color, makerName: $makerName}';
+    return 'Computer{name: $name, price: $price, color: $color, makerName: $makerName, weight: $weight}';
   }
 }

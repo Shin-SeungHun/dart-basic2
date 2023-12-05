@@ -19,6 +19,6 @@ class Book extends TangibleAsset {
 
   @override
   String toString() {
-    return 'Book{name: $name, price: $price, color: $color, isbn: $isbn}';
+    return 'Book{name: $name, price: $price, color: $color, isbn: $isbn, weight: $weight}';
   }
 }
