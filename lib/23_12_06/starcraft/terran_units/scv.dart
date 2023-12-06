@@ -6,8 +6,8 @@ class Scv extends TerranUnit implements Mechanic {
 
   @override
   void repair() {
-    // TODO: implement repair
+
   }
 
-  void resourceCollecting() {}
+  void getResource() {}
 }

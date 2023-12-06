@@ -13,9 +13,16 @@ import 'slime.dart';
 ///     4. 용사의 hp의 1/5에 해당하는 포인트를 용사의 hp로부터 감소시키고, ‘~포인트의 데미지’라고 표시
 ///     5. ‘독 공격의 남은 횟수’를 1 감소시킨다.
 class PoisonSlime extends Slime {
-  int poisonAttackCnt = 5; // 독 공격이 가능한 남은 횟수 초기값 5
+  int _poisonAttackCount = 5; // 독 공격이 가능한 남은 횟수 초기값 5
 
   PoisonSlime({required super.suffix});
+
+
+  int get poisonAttackCount => _poisonAttackCount;
+
+  set poisonAttackCount(int value) {
+    _poisonAttackCount = value;
+  }
 
   @override
   ///     PoisonSlime attack() 메소드가 호출되면 다음 내용의 공격을 한다
@@ -27,12 +34,12 @@ class PoisonSlime extends Slime {
   void attack(Hero hero) {
     super.attack(hero); // 보통 슬라임과 같은 공격
     // 독 공격의 남은 횟수가 0이 아니면 다음을 추가로 수행
-    if (poisonAttackCnt > 0) {
+    if (_poisonAttackCount > 0) {
       print('$suffix 슬라임이 추가로 독 포자를 살포했다!');
       int poisonDamage = (hero.hp / 5).floor(); // double 값을 int로 변환, 소숫점은 버림
       hero.hp -= poisonDamage;
       print('${hero.name}는 $suffix 슬라임의 공격에 $poisonDamage 포인트의 데미지를 입었다!\n');
-      poisonAttackCnt--; // 독 공격 횟수 감소
+      _poisonAttackCount--; // 독 공격 횟수 감소
     } else {
       print('슬라임 $suffix의 독 포자가 전부 소진되었다.\n');
     }
