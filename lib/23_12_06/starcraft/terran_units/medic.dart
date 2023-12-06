@@ -1,7 +1,8 @@
-import '../biology_mechanic/biology.dart';
+
+import '../bionic_mechanic/biology.dart';
 import '../units_by_race/terran_unit.dart';
 
-class Medic extends TerranUnit implements Biology {
+class Medic extends TerranUnit implements Bionic {
   Medic({
     required super.name,
     required super.hp,
@@ -9,6 +10,8 @@ class Medic extends TerranUnit implements Biology {
 
   @override
   void healing() {
-    // TODO: implement healing
+
   }
+
+
 }

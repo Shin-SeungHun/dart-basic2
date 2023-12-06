@@ -1,11 +1,19 @@
-class StarObject{
-  String name;
+class StarObject {
+  String _name;
   int _hp;
 
   StarObject({
-    required this.name,
+    required String name,
     required int hp,
-  }) : _hp = hp;
+  })  : _name = name,
+        _hp = hp;
+
+
+  String get name => _name;
+
+  set name(String value) {
+    _name = value;
+  }
 
   int get hp => _hp;
 
@@ -15,6 +23,6 @@ class StarObject{
 
   @override
   String toString() {
-    return 'StarObject{name: $name, _hp: $_hp}';
+    return 'StarObject{name: $_name, _hp: $_hp}';
   }
 }

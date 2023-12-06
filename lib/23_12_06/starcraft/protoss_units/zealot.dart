@@ -1,7 +1,7 @@
-import 'package:basic/23_12_06/starcraft/biology_mechanic/biology.dart';
+import 'package:basic/23_12_06/starcraft/bionic_mechanic/biology.dart';
 import '../units_by_race/protoss_unit.dart';
 
-class Zealot extends ProtossUnit implements Biology {
+class Zealot extends ProtossUnit implements Bionic {
   Zealot({
     required super.name,
     required super.hp,

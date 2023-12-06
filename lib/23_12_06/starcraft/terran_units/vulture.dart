@@ -1,4 +1,4 @@
-import '../biology_mechanic/mechanic.dart';
+import '../bionic_mechanic/mechanic.dart';
 import '../units_by_race/terran_unit.dart';
 
 class Vulture extends TerranUnit implements Mechanic {

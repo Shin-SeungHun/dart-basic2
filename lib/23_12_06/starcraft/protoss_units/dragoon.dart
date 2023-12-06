@@ -1,4 +1,4 @@
-import '../biology_mechanic/mechanic.dart';
+import '../bionic_mechanic/mechanic.dart';
 import '../units_by_race/protoss_unit.dart';
 
 class Dragoon extends ProtossUnit implements Mechanic {

@@ -1,4 +1,4 @@
-import '../biology_mechanic/mechanic.dart';
+import '../bionic_mechanic/mechanic.dart';
 import '../units_by_race/terran_unit.dart';
 
 class Scv extends TerranUnit implements Mechanic {
@@ -7,8 +7,10 @@ class Scv extends TerranUnit implements Mechanic {
     required super.hp,
   });
 
-  @override
-  void repair() {}
-
   void getResource() {}
+
+  @override
+  void repair() {
+    // TODO: implement repair
+  }
 }
