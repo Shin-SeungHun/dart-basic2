@@ -1,0 +1,119 @@
+@startuml
+class starObject{
+    name
+    hp
+   }
+
+package building&unit {
+
+    interface unit{
+    unitBirth()
+    unitDeath()
+    }
+
+    interface building{
+    constructBuilding()
+    destroyBuilding()
+    }
+
+}
+package biology&mechanic {
+    interface biology{
+        healing()
+        }
+
+        interface mechanic{
+        repair()
+    }
+}
+
+package buildings_by_race {
+    class terran_building
+    class zerg_building
+    class protoss_building
+}
+
+package units {
+ class "terran_unit"
+ class zerg_unit
+ class protoss_unit
+}
+package "tribe" {
+    class  "Terran"
+    class  "Zerg"{
+         +regen()
+    }
+    class  "Protoss"{
+        +regenShield()
+    }
+}
+package "terran units" {
+   class vulture
+   class tank
+   class marine
+   class medic {
+   healing(biology)
+   }
+   class SCV {
+   getResouce(resource)
+   repair(mechanic)
+   }
+}
+package "protoss units" {
+    class zealot
+    class dragoon
+}
+
+package "buildings" {
+class commandCenter
+class hive
+class nexus
+}
+starObject <-- "Terran"
+starObject <-- "Zerg"
+starObject <-- "Protoss"
+biology <.. Zerg
+
+
+unit <.. terran_unit
+unit <.. zerg_unit
+unit <.. protoss_unit
+
+Terran <-- terran_unit
+Zerg <-- zerg_unit
+Protoss <-- protoss_unit
+
+building  <.. terran_building
+building  <.. zerg_building
+building  <.. protoss_building
+mechanic  <.. terran_building
+
+Terran  <-- terran_building
+Zerg  <-- zerg_building
+Protoss  <-- protoss_building
+
+"terran_unit" <|-- "medic"
+"terran_unit" <|-- "SCV"
+"terran_unit" <|-- "tank"
+"terran_unit" <|-- "vulture"
+"terran_unit" <|-- "marine"
+
+protoss_unit <|-- zealot
+protoss_unit <|-- dragoon
+
+"biology" <.. "medic"
+"biology" <.. "SCV"
+"mechanic" <.. "tank"
+"mechanic" <.. "vulture"
+"biology" <.. "marine"
+"biology" <.. zealot
+"mechanic" <.. dragoon
+
+"mechanic" <.. "tank"
+"mechanic" <.. "vulture"
+
+terran_building <-- commandCenter
+zerg_building <-- hive
+protoss_building <-- nexus
+
+@enduml
