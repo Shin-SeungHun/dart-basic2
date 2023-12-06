@@ -29,7 +29,7 @@ class PoisonSlime extends Slime {
     // 독 공격의 남은 횟수가 0이 아니면 다음을 추가로 수행
     if (poisonAttackCnt > 0) {
       print('$suffix 슬라임이 추가로 독 포자를 살포했다!');
-      int poisonDamage = (hero.hp / 5).round(); // double 값을 int로 반올림
+      int poisonDamage = (hero.hp / 5).floor(); // double 값을 int로 변환, 소숫점은 버림
       hero.hp -= poisonDamage;
       print('${hero.name}는 $suffix 슬라임의 공격에 $poisonDamage 포인트의 데미지를 입었다!\n');
       poisonAttackCnt--; // 독 공격 횟수 감소
