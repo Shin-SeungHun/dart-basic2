@@ -2,7 +2,10 @@ import '../building_unit/building.dart';
 import '../race/terran.dart';
 
 class TerranBuilding extends Terran implements Building {
-  TerranBuilding({required super.name, required super.hp});
+  TerranBuilding({
+    required super.name,
+    required super.hp,
+  });
 
   @override
   void constructBuilding() {
