@@ -8,40 +8,20 @@ import 'thing.dart';
 /// 이 정의에 맞도록 TangibleAsset의 소스 코드를 수정한다.
 /// 이 때, TangibleAsset에 필드나 메소드의 추가가 필요하다면 적당히 추가한다.
 abstract class TangibleAsset extends Asset implements Thing {
-  List<TangibleAsset> tangibleAssetList = [];
+  String _color;
 
   @override
   double weight;
 
-  TangibleAsset({required super.assetList, required this.weight});
-
-  void tangibleAssetAdd() {
-    print('유형 자산 추가');
-    tangibleAssetList.add(this);
-    assetAdd();
-  }
-
-  void tangibleAsset() {
-    print('유형 자산 목록');
-    for (TangibleAsset tangibleAsset in tangibleAssetList) {
-      print(tangibleAsset);
-    }
-  }
-
-  @override
-  void assetAdd() {
-    super.assetList.add(this);
-  }
-
-  @override
-  void asset() {
-    for (Asset asset in super.assetList) {
-      print(asset);
-    }
-  }
+  TangibleAsset({
+    required String color,
+    required this.weight,
+    required super.name,
+    required super.price,
+  })  : _color = color;
 
   @override
   String toString() {
-    return 'TangibleAsset{tangibleAssetList: $tangibleAssetList}';
+    return 'TangibleAsset{_color: $_color, _weight: $weight}';
   }
 }

@@ -4,37 +4,5 @@ import 'asset.dart';
 /// 무형자산에는, 예를 들어 특허권(Patent)등이 있다.
 /// 무형자산은 자산(Asset)의 일종이다.
 abstract class IntangibleAsset extends Asset {
-  List<IntangibleAsset> intangibleAssetList = [];
-
-  IntangibleAsset({required super.assetList});
-
-  void intangibleAssetAdd() {
-    print('무형 자산 추가');
-    intangibleAssetList.add(this);
-    assetAdd();
-  }
-
-  void intangibleAsset() {
-    print('무형 자산 목록');
-    for (IntangibleAsset intangibleAsset in intangibleAssetList) {
-      print(intangibleAsset);
-    }
-  }
-
-  @override
-  void assetAdd() {
-    super.assetList.add(this);
-  }
-
-  @override
-  void asset() {
-    for (Asset asset in super.assetList) {
-      print(asset);
-    }
-  }
-
-  @override
-  String toString() {
-    return 'IntangibleAsset{intangibleAssetList: $intangibleAssetList}';
-  }
+  IntangibleAsset({required super.name, required super.price});
 }

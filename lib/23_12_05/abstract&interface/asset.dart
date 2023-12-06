@@ -1,25 +1,28 @@
 /// 자산
 abstract class Asset {
-  List<Asset> assetList = [];
+  String _name;
+  int _price;
 
   Asset({
-    required this.assetList,
-  });
+    required String name,
+    required int price,
+  })  : _name = name,
+        _price = price;
 
-  void assetAdd() {
-    print('자산 추가');
-    assetList.add(this);
+  int get price => _price;
+
+  set price(int value) {
+    _price = value;
   }
 
-  void asset() {
-    print('자산 목록');
-    for (Asset asset in assetList) {
-      print(asset);
-    }
+  String get name => _name;
+
+  set name(String value) {
+    _name = value;
   }
 
   @override
   String toString() {
-    return 'Asset{assetLists: $assetList}';
+    return 'Asset{_name: $_name, _price: $_price}';
   }
 }
