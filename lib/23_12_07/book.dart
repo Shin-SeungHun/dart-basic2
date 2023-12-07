@@ -30,6 +30,7 @@ class Book {
   }
 
   /// ==
+  /// title과 publishDate만 비교
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
