@@ -30,4 +30,9 @@ class Book {
   }
 
 
+
+  @override
+  String toString() {
+    return 'Book{ 제목: $_title, 출간일: $_publishDate, 한줄평: $_comment }';
+  }
 }
