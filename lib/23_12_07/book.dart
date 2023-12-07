@@ -40,7 +40,18 @@ class Book {
   @override
   int get hashCode => _title.hashCode ^ _publishDate.hashCode;
 
-
+  /// 깊은 복사
+  Book copyWith({
+    String? title,
+    DateTime? publishDate,
+    String? comment,
+  }) {
+    return Book(
+      title: title ?? _title,
+      publishDate: publishDate ?? _publishDate,
+      comment: comment ?? _comment,
+    );
+  }
 
   @override
   String toString() {
