@@ -29,6 +29,17 @@ class Book {
     _title = value;
   }
 
+  /// ==
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is Book &&
+              runtimeType == other.runtimeType &&
+              _title == other._title;
+
+  @override
+  int get hashCode => _title.hashCode ^ _publishDate.hashCode;
+
 
 
   @override
