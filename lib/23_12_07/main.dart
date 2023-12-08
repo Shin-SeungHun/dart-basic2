@@ -11,6 +11,7 @@ void main() {
 
   final Book originalBook2 = originalBook;
   // print(originalBook2.toString());
+  print('같은지 비교');
   print(originalBook2 == originalBook); // true
   print('');
 
@@ -23,7 +24,7 @@ void main() {
   // copyWith를 사용하여 깊은복사
   final Book copyBook = originalBook.copyWith(
       title: '복사본',
-      publishDate: DateTime(2023, 12, 11),
+      publishDate: DateTime(2023, 2, 2),
       comment: '이 책은 ${originalBook.title}의 복사본이다.');
 
   // 깊은 복사로 서로 해시 코드 값이 다르다.
@@ -35,7 +36,7 @@ void main() {
   final Book newBook = Book(
     title: '개정판',
     publishDate: DateTime(2023, 2, 2),
-    comment: '개정판이다.',
+    comment: '이 책은 개정판이다.',
   );
 
   final Book otherBook = Book(
@@ -43,6 +44,10 @@ void main() {
     publishDate: DateTime(2023, 2, 2),
     comment: '다른 책',
   );
+
+  print('같은지 비교');
+  print(copyBook == otherBook);
+  print('');
 
   // set에 인스턴스 넣기, 동일 객체 판단하는지 확인
   final Set<Book> bookSet = {

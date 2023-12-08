@@ -36,6 +36,7 @@ class Book {
       identical(this, other) ||
           other is Book &&
               runtimeType == other.runtimeType &&
+              _publishDate == other._publishDate &&
               _title == other._title;
 
   @override
