@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class Book {
   String _title;
   DateTime _publishDate = DateTime.now();
@@ -34,13 +36,15 @@ class Book {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is Book &&
-              runtimeType == other.runtimeType &&
-              _publishDate == other._publishDate &&
-              _title == other._title;
+      other is Book &&
+          runtimeType == other.runtimeType &&
+          _title == other._title &&
+          DateFormat('yyyy-MM--dd').format(_publishDate) ==
+              DateFormat('yyyy-MM-dd').format(other._publishDate);
 
   @override
-  int get hashCode => _title.hashCode ^ _publishDate.hashCode;
+  int get hashCode =>
+      _title.hashCode ^ DateFormat('yyyy-MM-dd').format(_publishDate).hashCode;
 
   /// 깊은 복사
   Book copyWith({
