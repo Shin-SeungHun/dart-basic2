@@ -1,9 +1,16 @@
 import 'book.dart';
 
 void main() {
+  final DateTime now = DateTime.now();
+  final DateTime tomorrow = now.add(Duration(days: 1));
+  final DateTime dayAfterTomorrow = now.add(Duration(days: 2));
+  print(now.hashCode);
+  print(tomorrow.hashCode);
+  print(dayAfterTomorrow.hashCode);
+
   final Book originalBook = Book(
     title: '원본',
-    publishDate: DateTime(1999, 11, 01),
+    publishDate: now,
     comment: '책의 원본이다.',
   );
 
@@ -24,26 +31,36 @@ void main() {
   // copyWith를 사용하여 깊은복사
   final Book copyBook = originalBook.copyWith(
       title: '복사본',
-      publishDate: DateTime(2023, 2, 2),
+      publishDate: now,
       comment: '이 책은 ${originalBook.title}의 복사본이다.');
 
   // 깊은 복사로 서로 해시 코드 값이 다르다.
   print('해시코드 값');
   print(originalBook.hashCode);
   print(copyBook.hashCode);
+  print(originalBook.hashCode == copyBook.hashCode);
+  print('');
+
+  print('같은지 비교');
+  print(originalBook == copyBook);
   print('');
 
   final Book newBook = Book(
     title: '개정판',
-    publishDate: DateTime(2023, 2, 2),
+    publishDate: dayAfterTomorrow,
     comment: '이 책은 개정판이다.',
   );
 
   final Book otherBook = Book(
     title: '개정판',
-    publishDate: DateTime(2023, 2, 2),
+    publishDate: dayAfterTomorrow,
     comment: '다른 책',
   );
+
+  print('해시코드 값');
+  print(newBook.hashCode);
+  print(otherBook.hashCode);
+  print(newBook.hashCode == otherBook.hashCode);
 
   print('같은지 비교');
   print(copyBook == otherBook);
