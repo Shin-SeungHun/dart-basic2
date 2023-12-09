@@ -1,5 +1,3 @@
-import 'package:intl/intl.dart';
-
 class Book {
   String _title;
   DateTime _publishDate = DateTime.now();
