@@ -38,9 +38,8 @@ class Book {
           runtimeType == other.runtimeType &&
           _title == other._title &&
           _publishDate.isAtSameMomentAs(
-            // 문자열로 변환하는 대신 DateTime의 객체를 직접 비교하는 isAsSameMomentsAs()메서도 사용
             other._publishDate,
-          );
+          );  // 문자열로 변환하는 대신 DateTime의 객체를 직접 비교하는 isAsSameMomentsAs()메서도 사용
 
   @override
   int get hashCode => _title.hashCode ^ _publishDate.hashCode;
