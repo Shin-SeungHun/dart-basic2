@@ -1,18 +1,27 @@
 enum KeyType {
-  padlock,
-  button,
-  dial,
-  finger;
+  padlock(maxNumberOfKeyUsage: 1024),
+  button(maxNumberOfKeyUsage: 10000),
+  dial(maxNumberOfKeyUsage: 30000),
+  finger(maxNumberOfKeyUsage: 1000000);
+
+  final int maxNumberOfKeyUsage;
+
+  const KeyType({
+    required this.maxNumberOfKeyUsage,
+  });
 }
 
-class StrongBox<E extends KeyType> {
+class StrongBox<E> {
+  E? _item;
   KeyType _keyType;
   int _numberOfKeyUsage;
 
   StrongBox({
+    required E? item,
     required KeyType keyType,
     required int numberOfKeyUsage,
-  })  : _keyType = keyType,
+  })  : _item = item,
+        _keyType = keyType,
         _numberOfKeyUsage = numberOfKeyUsage;
 
   int get numberOfKeyUsage => _numberOfKeyUsage;
@@ -27,24 +36,41 @@ class StrongBox<E extends KeyType> {
     _keyType = value;
   }
 
-  // 인스턴스를 저장한다.
-  void put(KeyType keyType) => _keyType = keyType;
+  E? get item => _item;
 
-  // 인스턴스를 얻을 수 있다.
-  KeyType? get() {
+  set item(E? value) {
+    _item = value;
+  }
+
+  void put(E item) => _item = item;
+
+  E? get() {
     numberOfKeyUsage++;
     switch (_keyType) {
+      // enum 키 종류의 시도 제한 횟수 미달시 null, 초과시 item 리턴
       case KeyType.padlock:
-        // 열쇠의 사용 횟수에 도달하기 전에는 null, 초과하면 키 종류를 리턴한다.
-        return (numberOfKeyUsage > 1024) ? _keyType : null;
+        return (numberOfKeyUsage > KeyType.padlock.maxNumberOfKeyUsage)
+            ? _item
+            : null;
       case KeyType.button:
-        return (numberOfKeyUsage > 10000) ? _keyType : null;
+        return (numberOfKeyUsage > KeyType.button.maxNumberOfKeyUsage)
+            ? _item
+            : null;
+
       case KeyType.dial:
-        return (numberOfKeyUsage > 30000) ? _keyType : null;
+        return (numberOfKeyUsage > KeyType.dial.maxNumberOfKeyUsage)
+            ? _item
+            : null;
+
       case KeyType.finger:
-        return (numberOfKeyUsage > 1000000) ? _keyType : null;
+        return (numberOfKeyUsage > KeyType.finger.maxNumberOfKeyUsage)
+            ? _item
+            : null;
     }
   }
+
+  @override
+  String toString() {
+    return 'StrongBox{_item: $_item, _keyType: $_keyType, _numberOfKeyUsage: $_numberOfKeyUsage}';
+  }
 }
-
-
