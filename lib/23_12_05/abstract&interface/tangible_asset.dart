@@ -18,7 +18,7 @@ abstract class TangibleAsset extends Asset implements Thing {
     required this.weight,
     required super.name,
     required super.price,
-  })  : _color = color;
+  }) : _color = color;
 
   @override
   String toString() {
