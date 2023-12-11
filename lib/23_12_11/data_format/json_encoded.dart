@@ -90,11 +90,7 @@ void main() {
     final Employee leader = Employee(name: '홍길동', age: 41);
     final Department department = Department(name: '총무과', leader: leader);
 
-    // 직렬화: Map으로 변환
-    final Map<String, dynamic> company = department.toJson();
-    print('$company\n');
-
-    // JSON 형식의 문자열로 변환
+    // 직렬화 JSON 형식의 문자열로 변환
     final String json = jsonEncode(department.toJson());
     print('$json\n');
 
