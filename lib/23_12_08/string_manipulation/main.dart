@@ -2,7 +2,7 @@ import 'word.dart';
 
 void main() {
   final Word word1 = Word();
-  word1.word = 'AEIO u';
+  word1.word = 'AEIO u1';
 
   final Word word2 = Word();
   word2.word = 'hello dart';
