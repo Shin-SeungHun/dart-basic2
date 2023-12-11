@@ -19,7 +19,7 @@ void main() {
   final String targetPath = 'copy_of_text.txt';
   copy(sourcePath, targetPath);
 
-  // 복사한 파일 읽기
+  // 복사할 파일 생성
   final File copiedFile = File(targetPath);
 
   // 복사한 파일에 누적해서 내용 쓰기
