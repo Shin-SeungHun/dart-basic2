@@ -90,7 +90,9 @@ void main() {
   final Department department = Department(name: '총무과', leader: leader);
 
   Map<String, dynamic> company = department.toJson();
+  print('$company\n');
   String json = jsonEncode(company);
+  print('$json\n');
 
   File companyFile = File('company.txt');
   companyFile.writeAsStringSync(json);
