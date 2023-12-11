@@ -1,6 +1,6 @@
 void main() {
-  final numString = '10.5';
-  int num;
+  final String numString = '10.5';
+  int num = 0;
   try {
     // 에러가 날 것 같은 코드 작성
     num = int.parse(numString);
