@@ -95,7 +95,7 @@ void main() {
     print('$company\n');
 
     // JSON 형식의 문자열로 변환
-    final String json = jsonEncode(company);
+    final String json = jsonEncode(department.toJson());
     print('$json\n');
 
     // 파일 쓰기
