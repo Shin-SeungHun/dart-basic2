@@ -25,21 +25,21 @@ class Employee {
 
   Map<String, dynamic> toJson() {
     return {
-      '_name': _name,
-      '_age': _age,
+      'name': _name,
+      'age': _age,
     };
   }
 
   factory Employee.fromJson(Map<String, dynamic> map) {
     return Employee(
-      name: map['_name'] as String,
-      age: map['_age'] as int,
+      name: map['name'] as String,
+      age: map['age'] as int,
     );
   }
 
   @override
   String toString() {
-    return 'Employee{_name: $_name, _age: $_age}';
+    return 'Employee{name: $_name, age: $_age}';
   }
 } // class Employee
 
@@ -67,21 +67,21 @@ class Department {
 
   Map<String, dynamic> toJson() {
     return {
-      '_name': _name,
-      '_leader': _leader,
+      'name': _name,
+      'leader': _leader,
     };
   }
 
   factory Department.fromJson(Map<String, dynamic> map) {
     return Department(
-      name: map['_name'] as String,
-      leader: map['_leader'] as Employee,
+      name: map['name'] as String,
+      leader: map['leader'] as Employee,
     );
   }
 
   @override
   String toString() {
-    return 'Department{_name: $_name, _leader: $_leader}';
+    return 'Department{name: $_name, leader: $_leader}';
   }
 } // class Department
 
