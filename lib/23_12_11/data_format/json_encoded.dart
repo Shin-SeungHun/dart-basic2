@@ -92,12 +92,13 @@ void main() {
 
     // 직렬화 JSON 형식의 문자열로 변환
     final String json = jsonEncode(department.toJson());
+    print('데이터 직렬화 완료');
     print('$json\n');
 
     // 파일 쓰기
     final File companyFile = File('company.txt');
     companyFile.writeAsStringSync(json);
-    print('데이터 직렬화 완료, company.txt파일 생성 완료');
+    print('company.txt파일 생성 완료');
 
     // 파일 읽기
     final String result = companyFile.readAsStringSync();
