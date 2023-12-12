@@ -120,7 +120,8 @@ void main() {
 
   print(milanTraders); // Mario
 
-  final milanTraderExists = transactions.any((transaction) => transaction.trader.city == 'Milan');
+  final milanTraderExists =
+      transactions.any((transaction) => transaction.trader.city == 'Milan');
 
   if (milanTraderExists) {
     print('밀라노에 거래자가 있습니다.');
