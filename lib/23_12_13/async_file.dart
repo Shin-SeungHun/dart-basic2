@@ -22,12 +22,13 @@ Future<void> editCsvFile() async {
 
     String sampleCopyCsv = await copyCsvFile.readAsString();
     print(sampleCopyCsv);
+    print('파일 복사 완료');
 
     if (sampleCopyCsv.contains('한석봉')) {
       // 한석봉을 김석봉으로 변경
       sampleCopyCsv = sampleCopyCsv.replaceAll('한석봉', '김석봉');
       print(sampleCopyCsv);
-    }else{
+    } else {
       print('한석봉 x');
     }
 
