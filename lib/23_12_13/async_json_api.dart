@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 void main() async {
-  String movieInfo = await getMovieInfo();
-  Map<String, dynamic> movieData = jsonDecode(movieInfo);
-  String director = movieData['director'];
+  final String movieInfo = await getMovieInfo();
+  final Map<String, dynamic> movieData = jsonDecode(movieInfo);
+  final String director = movieData['director'];
   print('감독: $director'); // George Lucas
 
-  Movie movie = Movie(title: '', director: '', year: 0);
+  final Movie movie = Movie(title: '', director: '', year: 0);
   movie.title = movieData['title'];
   movie.director = movieData['director'];
   movie.year = movieData['year'];
