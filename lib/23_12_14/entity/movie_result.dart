@@ -1,20 +1,20 @@
-class MovieDto {
-  final bool adult;
-  final String? backdropPath;
-  final List<int> genreIds;
-  final int id;
-  final String originalLanguage;
-  final String originalTitle;
-  final String overview;
-  final double popularity;
-  final String posterPath;
-  final String releaseDate;
-  final String title;
-  final bool video;
-  final double voteAverage;
-  final int voteCount;
+class MovieResult {
+  bool adult;
+  String backdropPath;
+  List<int> genreIds;
+  int id;
+  String originalLanguage;
+  String originalTitle;
+  String overview;
+  double popularity;
+  String posterPath;
+  String releaseDate;
+  String title;
+  bool video;
+  double voteAverage;
+  int voteCount;
 
-  MovieDto({
+  MovieResult({
     required this.adult,
     required this.backdropPath,
     required this.genreIds,
@@ -31,8 +31,8 @@ class MovieDto {
     required this.voteCount,
   });
 
-  factory MovieDto.fromJson(Map<String, dynamic> json) {
-    return MovieDto(
+  factory MovieResult.fromJson(Map<String, dynamic> json) {
+    return MovieResult(
       adult: json['adult'] ?? false,
       backdropPath: json['backdrop_path'] ?? '',
       genreIds: json['genre_ids'] != null
@@ -55,24 +55,19 @@ class MovieDto {
   Map<String, dynamic> toJson() {
     return {
       'adult': adult,
-      'backdropPath': backdropPath,
-      'genreIds': genreIds,
+      'backdrop_path': backdropPath,
+      'genre_ids': genreIds,
       'id': id,
-      'originalLanguage': originalLanguage,
-      'originalTitle': originalTitle,
+      'original_language': originalLanguage,
+      'original_title': originalTitle,
       'overview': overview,
       'popularity': popularity,
-      'posterPath': posterPath,
-      'releaseDate': releaseDate,
+      'poster_path': posterPath,
+      'release_date': releaseDate,
       'title': title,
       'video': video,
-      'voteAverage': voteAverage,
-      'voteCount': voteCount,
+      'vote_average': voteAverage,
+      'vote_count': voteCount,
     };
-  }
-
-  @override
-  String toString() {
-    return 'MovieDto{adult: $adult, backdropPath: $backdropPath, genreIds: $genreIds, id: $id, originalLanguage: $originalLanguage, originalTitle: $originalTitle, overview: $overview, popularity: $popularity, posterPath: $posterPath, releaseDate: $releaseDate, title: $title, video: $video, voteAverage: $voteAverage, voteCount: $voteCount}';
   }
 }
