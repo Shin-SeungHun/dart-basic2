@@ -1,6 +1,5 @@
 import 'dart:convert';
 import '../dto/movie_data.dart';
-import '../dto/movie_dto.dart';
 import 'package:http/http.dart' as http;
 
 class MovieApi {

@@ -3,8 +3,6 @@ import 'dart:convert';
 import 'package:basic/23_12_15/data_source/movie_api.dart';
 import 'package:basic/23_12_15/dto/movie_data.dart';
 import 'package:basic/23_12_15/mapper/movie_mapper.dart';
-
-import 'dto/movie_dto.dart';
 import 'model/movie.dart';
 
 void main() async {
