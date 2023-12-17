@@ -14,8 +14,8 @@ void main() async {
 
   // json을 dto로
   final MovieData dto = await api.fetchMovies(upcoming: url);
-  print(dto);
-  print(jsonEncode(dto.toJson()));
+  // print(dto);
+  // print(jsonEncode(dto.toJson()));
   // dto에서 필요한 내용을 mapper를 통해 모델 클래스로 변환
   final List<Movie> movies = dto.results.map((e) => e.toMovie()).toList();
 
