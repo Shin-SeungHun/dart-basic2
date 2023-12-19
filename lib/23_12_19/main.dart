@@ -139,7 +139,6 @@ void deleteUser() {
 
     if (confirmation == 'y') {
       userManager.deleteUserList(getUserList: userList);
-      print('회원 정보 삭제 완료');
     } else {
       print('삭제가 취소되었습니다.');
     }
@@ -171,7 +170,6 @@ void editUser() {
     if (confirmation == 'y') {
       userManager.updateUserList(
           getUserList: modifyUserList(id: userToEdit.id));
-      print('회원 정보 수정 완료');
     } else {
       print('수정이 취소되었습니다.');
     }
