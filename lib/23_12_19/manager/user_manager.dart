@@ -7,7 +7,7 @@ class UserManager {
   // 신규 회원 등록
   void sign({required User user}) {
     _userList.add(user);
-    print('회원가입되었습니다.');
+    print('회원 정보 등록 완료');
     print('${user.toString()}\n');
   }
 
@@ -60,7 +60,7 @@ class UserManager {
         (user) => getUserList.any((getUser) => getUser.id == user.id));
 
     if ((oldTotalUserList - _userList.length) > 0) {
-      print('회원 탈퇴되었습니다.');
+      print('회원 정보 삭제 완료');
     } else {
       print('삭제할 정보가 없습니다.');
     }
@@ -80,7 +80,7 @@ class UserManager {
         user.birth == getUserList.birth;
         user.address == getUserList.address;
         user.contact == getUserList.contact;
-        print('회원정보를 수정하셨습니다.');
+        print('회원정보 수정 완료');
       }
     }
     print('');
