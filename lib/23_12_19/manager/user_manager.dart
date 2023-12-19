@@ -4,17 +4,19 @@ import 'package:basic/23_12_19/model/user.dart';
 class UserManager {
   final List<User> _userList = [];
 
-  // 신규 회원 등록
+  /// 신규 회원 등록
   void sign({required User user}) {
     _userList.add(user);
     print('회원 정보 등록 완료');
     print('${user.toString()}\n');
   }
 
+  /// id로 회원 정보 조회
   Iterable<User> getIdUserList({required int id}) {
     return _userList.where((user) => user.id == id);
   }
 
+  /// 4자리 수 랜덤 아이디 생성
   int generateRandomId() {
     while (true) {
       Random random = Random();
@@ -23,6 +25,7 @@ class UserManager {
     }
   }
 
+  /// 전체 회원 목록
   void getAllUserList() {
     int totalUserList = _userList.length;
     if (totalUserList == 0) {
@@ -37,6 +40,7 @@ class UserManager {
     print('');
   }
 
+  /// 전달 받은 회원 정보 조회
   void getUserList({required Iterable<User> getUserList}) {
     int totalUserList = _userList.length;
     if (totalUserList == 0) {
@@ -50,6 +54,7 @@ class UserManager {
     print('');
   }
 
+  /// 전달 받은 회원 정보 삭제
   void deleteUserList({required Iterable<User> getUserList}) {
     int oldTotalUserList = _userList.length;
     if (oldTotalUserList == 0) {
@@ -66,6 +71,7 @@ class UserManager {
     }
   }
 
+  /// 전달 받은 회원 정보 수정
   void updateUserList({required User getUserList}) {
     print(getUserList.toString());
 

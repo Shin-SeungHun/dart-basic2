@@ -1,10 +1,12 @@
 import 'dart:io';
+import 'package:basic/23_12_19/manager/book_manager.dart';
 import 'package:basic/23_12_19/model/user.dart';
 import 'package:basic/23_12_19/manager/user_manager.dart';
 import 'model/book.dart';
 
-
+// UserManager, BookManager 전역변수, 초기화
 UserManager userManager = UserManager();
+BookManager bookManager = BookManager();
 
 void main() {
   init();
@@ -216,13 +218,6 @@ void allUserList() {
   userManager.getAllUserList();
 }
 
-
-void printUserList({required Iterable<User> userList}) {
-  userManager.getUserList(getUserList: userList);
-}
-
-
-
 Book book =
     Book(id: 1, title: 'title', author: 'author', publicationDate: null);
 Book book2 =
@@ -232,19 +227,36 @@ Book book3 =
 
 List<Book> bookList = [book, book2, book3];
 
+
 /// 도서 관리
 void library() {
-  print('도서관리 화면');
+  print('도서 관리 화면');
+  print('0.뒤로 / 1.전체 도서 목록 / 2.도서 대출 / 3.도서 반납');
 
-  print('대출할 책 id');
-  String _id = stdin.readLineSync() ?? '0';
-  if (_id == '0' || _id.isEmpty) {
-    print('');
+  String? input = stdin.readLineSync();
+
+  switch (input) {
+    case '0':
+      init();
+      break;
+    case '1':
+      allBookList();
+      break;
+    case '2':
+      break;
+    case '3':
+      break;
+
+    default:
+      print('0~3만 입력하세요');
+      break;
   }
-  Iterable<Book> books = getIdBooks(id: int.parse(_id));
-  // print('대출할 책 이름');
 }
 
-Iterable<Book> getIdBooks({required int id}) {
-  return bookList.where((book) => book.id == id);
+void allBookList() {
+  bookManager.addBook(book: Book(id: 1, title: 'title1', author: 'author1', publicationDate: null));
+  bookManager.addBook(book: Book(id: 2, title: 'title2', author: 'author2', publicationDate: null));
+  bookManager.addBook(book: Book(id: 3, title: 'title3', author: 'author3', publicationDate: null));
+
+  bookManager.getAllBookList();
 }
