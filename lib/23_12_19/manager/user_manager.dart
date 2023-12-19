@@ -1,7 +1,5 @@
 import 'dart:math';
-
-import 'package:basic/23_12_19/main.dart';
-import 'package:basic/23_12_19/user.dart';
+import 'package:basic/23_12_19/model/user.dart';
 
 class UserManager {
   final List<User> _userList = [];
