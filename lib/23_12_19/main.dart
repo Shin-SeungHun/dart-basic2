@@ -33,6 +33,7 @@ void init() {
   }
 }
 
+/// 회원관리
 void user() {
   print('0.뒤로 / 1.회원 가입 / 2.전체 회원 목록 / 3.회원 정보 수정 / 4.회원 정보 삭제');
 
@@ -138,7 +139,7 @@ void deleteUser() {
 
     if (confirmation == 'y') {
       userManager.deleteUserList(getUserList: userList);
-      print('회원이 삭제되었습니다.');
+      print('회원 정보 삭제 완료');
     } else {
       print('삭제가 취소되었습니다.');
     }
@@ -170,7 +171,7 @@ void editUser() {
     if (confirmation == 'y') {
       userManager.updateUserList(
           getUserList: modifyUserList(id: userToEdit.id));
-      print('회원 정보가 수정되었습니다.');
+      print('회원 정보 수정 완료');
     } else {
       print('수정이 취소되었습니다.');
     }
@@ -233,6 +234,7 @@ Book book3 =
 
 List<Book> bookList = [book, book2, book3];
 
+/// 도서 관리
 void library() {
   print('도서관리 화면');
 
